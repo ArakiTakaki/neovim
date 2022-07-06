@@ -3,7 +3,7 @@ local function command(command)
     vim.cmd(command)
 end
 
-function isModuleAvailable(strModuleName)
+local function isModuleAvailable(strModuleName)
   if package.loaded[strModuleName] then
     return true
   else
