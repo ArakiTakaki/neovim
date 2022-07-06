@@ -1,5 +1,7 @@
 require('utils.isModuleAvailable')
+require('utils.cmd')
 
 Util =  {
-  isModuleAvailable = IsModuleAvailable
+  isModuleAvailable = IsModuleAvailable,
+  cmd = Command,
 }

@@ -51,5 +51,5 @@ local function startup(use)
 	use { 'leafgarland/typescript-vim',  ft = {'typescript', 'typescript.tsx'}}
 end
 if Util.isModuleAvailable('packer') then
-	require'packer'.startup(startup)
+	require('packer').startup(startup)
 end
