@@ -1,2 +1,7 @@
+vim.cmd[[packadd packer.nvim]]
 
-print('hoge')
+require('settings/packar')
+require('settings/lspconfig')
+require('settings/telescope')
+require('configs/key')
+
