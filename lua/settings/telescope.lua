@@ -1,5 +1,3 @@
-require('utils.entry')
-
 if Util.isModuleAvailable('telescope') then
 	require("telescope").load_extension("lazygit")
 	require('telescope').setup{

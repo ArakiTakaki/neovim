@@ -1,5 +1,3 @@
-require('utils.entry')
-
 if Util.isModuleAvailable('lspconfig') then
 	local nvim_lsp = require('lspconfig')
 	local on_attach = function(client, bufnr)
