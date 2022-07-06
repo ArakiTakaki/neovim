@@ -1,5 +1,6 @@
-require('utils/isModuleAvailable')
-if isModuleAvailable('telescope') then
+require('utils.entry')
+
+if Util.isModuleAvailable('telescope') then
 	require("telescope").load_extension("lazygit")
 	require('telescope').setup{
 		defaults = { file_ignore_patterns = {"node_modules"} },

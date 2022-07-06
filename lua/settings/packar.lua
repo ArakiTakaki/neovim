@@ -1,4 +1,4 @@
-require('utils/isModuleAvailable')
+require('utils.entry')
 
 --
 -- git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
@@ -50,6 +50,6 @@ local function startup(use)
 	-- deps
 	use { 'leafgarland/typescript-vim',  ft = {'typescript', 'typescript.tsx'}}
 end
-if isModuleAvailable('packer') then
+if Util.isModuleAvailable('packer') then
 	require'packer'.startup(startup)
 end

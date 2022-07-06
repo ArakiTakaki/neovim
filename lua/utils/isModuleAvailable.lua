@@ -1,11 +1,11 @@
-function isModuleAvailable(name)
-  if package.loaded[name] then
+function IsModuleAvailable(strModuleName)
+  if package.loaded[strModuleName] then
     return true
   else
     for _, searcher in ipairs(package.searchers or package.loaders) do
-      local loader = searcher(name)
+      local loader = searcher(strModuleName)
       if type(loader) == 'function' then
-        package.preload[name] = loader
+        package.preload[strModuleName] = loader
         return true
       end
     end

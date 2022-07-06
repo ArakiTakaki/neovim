@@ -1,6 +1,6 @@
-require('utils/isModuleAvailable')
+require('utils.entry')
 
-if isModuleAvailable('lspconfig') then
+if Util.isModuleAvailable('lspconfig') then
 	local nvim_lsp = require('lspconfig')
 	local on_attach = function(client, bufnr)
 		local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
