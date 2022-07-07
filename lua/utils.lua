@@ -1,5 +1,7 @@
+local util = {}
+
 -- モジュールが存在しているかどうかの判定
-local function isModuleAvailable(strModuleName)
+util.isModuleAvailable = function (strModuleName)
   if package.loaded[strModuleName] then
     return true
   else
@@ -13,6 +15,14 @@ local function isModuleAvailable(strModuleName)
     return false
   end
 end
-Util =  {
-  isModuleAvailable = isModuleAvailable,
-}
+
+util.map = function(func, seq)
+  local result = {}
+  for _, v in ipairs(seq) do
+    table.insert(result, func(v))
+  end
+
+  return result
+end
+
+return util

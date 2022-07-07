@@ -60,3 +60,7 @@ ref https://github.com/wbthomason/packer.nvim
 ```
 
 
+
+## 参考資料
+
+- https://zenn.dev/eetann/scraps/adddd5604ae9ea
