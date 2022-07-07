@@ -29,6 +29,9 @@ local function startup(use)
 	use 'roxma/nvim-yarp'          -- deps
 	use 'roxma/vim-hug-neovim-rpc' -- deps
 
+	use 'mileszs/ack.vim' -- https://github.com/mileszs/ack.vim
+	-- https://qiita.com/Biacco/items/b750c073a92a8e9fea7d
+
 	-- =================================================================================
 	-- languages
 	use { 'elzr/vim-json',               ft = {'json'} }

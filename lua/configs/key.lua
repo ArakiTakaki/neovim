@@ -14,6 +14,10 @@ vim.cmd 'nnoremap [file]f <cmd>Telescope find_files<cr>'
 vim.cmd 'nnoremap [file]g <cmd>Telescope live_grep<cr>'
 vim.cmd 'nnoremap [file]b <cmd>Telescope buffers<cr>'
 vim.cmd 'nnoremap [file]h <cmd>Telescope help_tags<cr>'
+vim.cmd 'nnoremap [file]s :Ack '
+
+vim.cmd 'nnoremap <C-p> <cmd>Telescope find_files<cr>'
+vim.cmd 'nnoremap <C-f> :Ack '
 
 -- local a = require "plenary.async"
 -- local path = 'hoge'
