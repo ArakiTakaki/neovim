@@ -1,8 +1,4 @@
-require('utils.isModuleAvailable')
-local function command(command)
-    vim.cmd(command)
-end
-
+-- モジュールが存在しているかどうかの判定
 local function isModuleAvailable(strModuleName)
   if package.loaded[strModuleName] then
     return true
@@ -19,5 +15,4 @@ local function isModuleAvailable(strModuleName)
 end
 Util =  {
   isModuleAvailable = isModuleAvailable,
-  cmd = command,
 }

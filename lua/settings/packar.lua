@@ -26,27 +26,25 @@ local function startup(use)
 	-- =================================================================================
 	-- filler
 	use 'Shougo/defx.nvim' -- https://github.com/Shougo/defx.nvim
-	-- deps
-	use 'roxma/nvim-yarp'
-	use 'roxma/vim-hug-neovim-rpc'
+	use 'roxma/nvim-yarp'          -- deps
+	use 'roxma/vim-hug-neovim-rpc' -- deps
 
 	-- =================================================================================
 	-- languages
-	use { 'elzr/vim-json',               ft = {'json'}}
-	use { 'groenewege/vim-less',         ft = {'less'}}
-	use { 'stephpy/vim-yaml',            ft = {'yaml'}}
-	use { 'digitaltoad/vim-jade',        ft = {'jade'}}
-	use { 'wavded/vim-stylus',           ft = {'stylus'}}
-	use { 'StanAngeloff/php.vim',        ft = {'php'}}
-	use { 'kchmck/vim-coffee-script',    ft = {'coffee'}}
-	use { 'dag/vim-fish',                ft = {'fish'}}
-	use { 'cespare/vim-toml',            ft = {'toml'}}
-	use { 'posva/vim-vue',               ft = {'vue'}}
-	use { 'yuezk/vim-js',                ft = {'javascript', 'javascript.jsx'}}
-	use { 'maxmellon/vim-jsx-pretty',    ft = {'javascript', 'javascript.jsx'}}
-	use { 'peitalin/vim-jsx-typescript', ft = {'typescript', 'typescript.tsx'}}
-	-- deps
-	use { 'leafgarland/typescript-vim',  ft = {'typescript', 'typescript.tsx'}}
+	use { 'elzr/vim-json',               ft = {'json'} }
+	use { 'groenewege/vim-less',         ft = {'less'} }
+	use { 'stephpy/vim-yaml',            ft = {'yaml'} }
+	use { 'digitaltoad/vim-jade',        ft = {'jade'} }
+	use { 'wavded/vim-stylus',           ft = {'stylus'} }
+	use { 'StanAngeloff/php.vim',        ft = {'php'} }
+	use { 'kchmck/vim-coffee-script',    ft = {'coffee'} }
+	use { 'dag/vim-fish',                ft = {'fish'} }
+	use { 'cespare/vim-toml',            ft = {'toml'} }
+	use { 'posva/vim-vue',               ft = {'vue'} }
+	use { 'yuezk/vim-js',                ft = {'javascript', 'javascript.jsx'} }
+	use { 'maxmellon/vim-jsx-pretty',    ft = {'javascript', 'javascript.jsx'} }
+	use { 'peitalin/vim-jsx-typescript', ft = {'typescript', 'typescript.tsx'} }
+	use { 'leafgarland/typescript-vim',  ft = {'typescript', 'typescript.tsx'} } -- deps
 end
 if Util.isModuleAvailable('packer') then
 	require('packer').startup(startup)
