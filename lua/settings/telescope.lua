@@ -1,3 +1,5 @@
+local Util = require 'utils'
+
 if Util.isModuleAvailable('telescope') then
 	require('telescope').load_extension('lazygit')
 	require('telescope').setup {

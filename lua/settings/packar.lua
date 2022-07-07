@@ -1,9 +1,11 @@
+local Util = require 'utils'
+
 --
 -- git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 -- git clone https://github.com/wbthomason/packer.nvim '$env:LOCALAPPDATA\nvim-data\site\pack\packer\start\packer.nvim'
 -- packar https://qiita.com/delphinus/items/8160d884d415d7425fcc
 --
---
+
 local function startup(use)
 	use 'wbthomason/packer.nvim' -- https://github.com/wbthomason/packer.nvim
 	use 'nvim-lua/popup.nvim'
@@ -33,6 +35,10 @@ local function startup(use)
 	-- https://qiita.com/Biacco/items/b750c073a92a8e9fea7d
 
 	-- =================================================================================
+	-- utils
+	use 'skanehira/translate.vim' -- :Translate で翻訳できる
+
+	-- =================================================================================
 	-- languages
 	use { 'elzr/vim-json',               ft = {'json'} }
 	use { 'groenewege/vim-less',         ft = {'less'} }
@@ -49,6 +55,7 @@ local function startup(use)
 	use { 'peitalin/vim-jsx-typescript', ft = {'typescript', 'typescript.tsx'} }
 	use { 'leafgarland/typescript-vim',  ft = {'typescript', 'typescript.tsx'} } -- deps
 end
+
 if Util.isModuleAvailable('packer') then
 	require('packer').startup(startup)
 end
