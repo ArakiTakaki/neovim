@@ -35,7 +35,8 @@ local function startup(use)
 	-- https://qiita.com/Biacco/items/b750c073a92a8e9fea7d
 
 	-- =================================================================================
-	-- languages
+	-- utils
+	use 'skanehira/translate.vim' -- :Translate で翻訳できる
 
 	-- =================================================================================
 	-- languages
