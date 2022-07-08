@@ -40,20 +40,22 @@ local function startup(use)
 
 	-- =================================================================================
 	-- languages
-	use { 'elzr/vim-json',               ft = {'json'} }
-	use { 'groenewege/vim-less',         ft = {'less'} }
-	use { 'stephpy/vim-yaml',            ft = {'yaml'} }
-	use { 'digitaltoad/vim-jade',        ft = {'jade'} }
+	use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
+
+	-- use { 'elzr/vim-json',               ft = {'json'} }
+	-- use { 'groenewege/vim-less',         ft = {'less'} }
+	-- use { 'stephpy/vim-yaml',            ft = {'yaml'} }
+	-- use { 'digitaltoad/vim-jade',        ft = {'jade'} }
 	use { 'wavded/vim-stylus',           ft = {'stylus'} }
-	use { 'StanAngeloff/php.vim',        ft = {'php'} }
-	use { 'kchmck/vim-coffee-script',    ft = {'coffee'} }
-	use { 'dag/vim-fish',                ft = {'fish'} }
+	-- use { 'StanAngeloff/php.vim',        ft = {'php'} }
+	-- use { 'kchmck/vim-coffee-script',    ft = {'coffee'} }
+	-- use { 'dag/vim-fish',                ft = {'fish'} }
 	use { 'cespare/vim-toml',            ft = {'toml'} }
 	use { 'posva/vim-vue',               ft = {'vue'} }
-	use { 'yuezk/vim-js',                ft = {'javascript', 'javascript.jsx'} }
-	use { 'maxmellon/vim-jsx-pretty',    ft = {'javascript', 'javascript.jsx'} }
-	use { 'peitalin/vim-jsx-typescript', ft = {'typescript', 'typescript.tsx'} }
-	use { 'leafgarland/typescript-vim',  ft = {'typescript', 'typescript.tsx'} } -- deps
+	-- use { 'yuezk/vim-js',                ft = {'javascript', 'javascript.jsx'} }
+	-- use { 'maxmellon/vim-jsx-pretty',    ft = {'javascript', 'javascript.jsx'} }
+	-- use { 'peitalin/vim-jsx-typescript', ft = {'typescript', 'typescript.tsx'} }
+	-- use { 'leafgarland/typescript-vim',  ft = {'typescript', 'typescript.tsx'} } -- deps
 end
 
 if Util.isModuleAvailable('packer') then
