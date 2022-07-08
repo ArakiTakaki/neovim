@@ -10,7 +10,6 @@ if util.isModuleAvailable('nvim-treesitter.configs') then
 	      'ruby',
 	      'toml',
 	      'c_sharp',
-	      'vue',
 	    }
 	  }
 	}
