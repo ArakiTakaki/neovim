@@ -11,7 +11,7 @@ if is_nvim
 endif
 "=====================================================================
 " other config
-syntax on
+" syntax on " ハイライトプラグインがあるのでオフ
 filetype plugin indent on  " ファイルタイプの検出とは、ファイルを開いたときにファイルの種類を検出する機能  https://vim-jp.org/vimdoc-ja/filetype.html
 
 "=====================================================================
@@ -22,7 +22,10 @@ if is_windows
 else
   set encoding=utf-8
 endif
-" set ruler                  " ルーラーの表示
+set number
+" set ruler                " ルーラーの表示
+set cursorline             " 行を強調表示
+set cursorcolumn           " 列を強調表示
 set clipboard+=unnamedplus " クリップボードのコピー
 set encoding=utf-8         " 文字コード
 set linespace=0            " hoge
