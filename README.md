@@ -59,8 +59,14 @@ ref https://github.com/wbthomason/packer.nvim
 :PackerSync
 ```
 
+## Q&A
+
+### Defxが起動しない
+
+- https://github.com/Shougo/defx.nvim#requirements
 
 
 ## 参考資料
 
 - https://zenn.dev/eetann/scraps/adddd5604ae9ea
+- [Neovim v0.5リリース記念 v0.5の新機能を紹介します【前編】](https://lab.mo-t.com/blog/neovim-v05-introduction-new-features-part-1)
