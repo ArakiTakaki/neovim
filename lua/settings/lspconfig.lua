@@ -16,3 +16,4 @@ nvim_lsp.tsserver.setup {
 	on_attach = on_attach,
 	filetypes = { 'javascript', 'typescript', 'typescriptreact', 'typescript.tsx' }
 }
+nvim_lsp.vuels.setup{ on_attach = on_attach }

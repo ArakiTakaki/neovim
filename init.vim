@@ -146,9 +146,10 @@ command! Read edit ~/.config/nvim/README.md
 
 "=====================================================================
 " あとで変更する
+"
 if is_nvim
-  autocmd FileType vue syntax sync fromstart
-
+  autocmd BufNewFile,BufRead *.vue set filetype=vue
+  " autocmd FileType vue syntax sync fromstart
   " let g:ale_fixers = {
   " \   'typescript': ['prettier'],
   " \   'typescriptreact': ['prettier'],
