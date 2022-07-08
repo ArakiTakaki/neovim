@@ -40,6 +40,7 @@ local function startup(use)
 
 	-- =================================================================================
 	-- languages
+	use 'christianchiarulli/nvcode-color-schemes.vim'
 	use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
 
 	-- use { 'elzr/vim-json',               ft = {'json'} }

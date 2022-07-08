@@ -1,5 +1,6 @@
 local util = require 'utils'
 -- https://zenn.dev/duglaser/articles/c02d6a937a48df
+-- https://lab.mo-t.com/blog/neovim-v05-introduction-new-features-part-2
 if util.isModuleAvailable('nvim-treesitter.configs') then
 	require'nvim-treesitter.configs'.setup {
 	  highlight = {

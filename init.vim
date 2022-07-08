@@ -11,7 +11,7 @@ if is_nvim
 endif
 "=====================================================================
 " other config
-syntax enable
+syntax on
 filetype plugin indent on  " ファイルタイプの検出とは、ファイルを開いたときにファイルの種類を検出する機能  https://vim-jp.org/vimdoc-ja/filetype.html
 
 "=====================================================================
@@ -241,4 +241,13 @@ if is_nvim
   if executable('ag')
     let g:ackprg = 'ag --vimgrep'
   endif
+endif
+
+" configure nvcode-color-schemes
+let g:nvcode_termcolors=256
+colorscheme nvcode " Or whatever colorscheme you make
+" checks if your terminal has 24-bit color support
+if (has("termguicolors"))
+    set termguicolors
+    hi LineNr ctermbg=NONE guibg=NONE
 endif
