@@ -178,6 +178,7 @@ call defx#custom#option('_', {
   \ 'columns': 'git:icons:indent:filename:mark',
   \ })
 
+" autocmd FileType netrw
 autocmd FileType defx call s:defx_my_settings()
 function! s:defx_my_settings() abort
   " Define mappings
@@ -214,7 +215,24 @@ function! s:defx_my_settings() abort
   nnoremap <silent><buffer><expr> <C-g> defx#do_action('print')
   nnoremap <silent><buffer><expr> cd defx#do_action('change_vim_cwd')
 endfunction
+autocmd BufEnter,VimEnter,BufNew,BufWinEnter,BufRead,BufCreate
+      \ * if isdirectory(expand('<amatch>'))
+      \   | call s:browse_check(expand('<amatch>')) | endif
+
+function! s:browse_check(path) abort
+  if bufnr('%') != expand('<abuf>')
+    return
+  endif
+
+  " Disable netrw.
+  augroup FileExplorer
+    autocmd!
+  augroup END
+
+  execute 'Defx' a:path
+endfunction
 
 if executable('ag')
   let g:ackprg = 'ag --vimgrep'
 endif
+
