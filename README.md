@@ -9,6 +9,25 @@ git clone --depth 1 https://github.com/ArakiTakaki/neovim.git
 
 ## Neovimをセットアップする
 
+### windows
+
+TODO: ドキュメント整理
+
+- install https://github.com/neovim/neovim
+
+Python3のPathを通す
+
+- Python3のpath
+- `pip3 install --user pynvim`
+- [MinGWのGCCインストール手順](https://github.com/kaityo256/lab_startup/blob/main/gccwin/README.md)
+
+
+Symlinkを作る
+
+```
+New-Item -Type SymbolicLink 'OriginalPath' -Value
+```
+
 ### mac
 
 Neovimのインストール

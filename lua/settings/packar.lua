@@ -1,5 +1,5 @@
-local Util = require 'utils'
-
+local util = require 'utils'
+local is = require 'is'
 --
 -- git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 -- git clone https://github.com/wbthomason/packer.nvim '$env:LOCALAPPDATA\nvim-data\site\pack\packer\start\packer.nvim'
@@ -15,10 +15,6 @@ local function startup(use)
 	use 'tpope/vim-fugitive' -- https://github.com/tpope/vim-fugitive
 	-- git browse
 	use 'tpope/vim-rhubarb' -- https://qiita.com/takayama/items/de4341fb8f015ffe4750#tpopevim-rhubarb
-	use 'nvim-telescope/telescope.nvim' -- https://github.com/nvim-telescope/telescope.nvim#usage
-	-- deps
-	use 'nvim-lua/plenary.nvim'
-	use 'kdheepak/lazygit.nvim'
 
 	-- =================================================================================
 	-- lsp
@@ -27,9 +23,8 @@ local function startup(use)
 
 	-- =================================================================================
 	-- filler
-	use 'Shougo/defx.nvim' -- https://github.com/Shougo/defx.nvim
-	use 'roxma/nvim-yarp'          -- deps
-	use 'roxma/vim-hug-neovim-rpc' -- deps
+	use { 'Shougo/defx.nvim', requires = { 'roxma/nvim-yarp', 'roxma/vim-hug-neovim-rpc' } } -- https://github.com/Shougo/defx.nvim
+
 
 	use 'mileszs/ack.vim' -- https://github.com/mileszs/ack.vim
 	-- https://qiita.com/Biacco/items/b750c073a92a8e9fea7d
@@ -42,8 +37,13 @@ local function startup(use)
 	-- syntax
 	use 'christianchiarulli/nvcode-color-schemes.vim'
 	use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
+
+	-- -- mac only
+	if is.mac then
+		use {'nvim-telescope/telescope.nvim', requires = {'nvim-lua/plenary.nvim', 'kdheepak/lazygit.nvim'}} -- https://github.com/nvim-telescope/telescope.nvim#usage
+	end
 end
 
-if Util.isModuleAvailable('packer') then
-	require('packer').startup(startup)
+if util.isModuleAvailable 'packer' then
+	require 'packer' .startup(startup)
 end
