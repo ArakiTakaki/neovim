@@ -1,5 +1,4 @@
 local util = require 'utils'
-local is = require 'is'
 --
 -- git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 -- git clone https://github.com/wbthomason/packer.nvim '$env:LOCALAPPDATA\nvim-data\site\pack\packer\start\packer.nvim'
@@ -36,12 +35,10 @@ local function startup(use)
 	-- =================================================================================
 	-- syntax
 	use 'christianchiarulli/nvcode-color-schemes.vim'
-	use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
+	use 'nvim-treesitter/nvim-treesitter'
+	use {'tikhomirov/vim-glsl', ft = { 'glsl' } }
 
-	-- -- mac only
-	if is.mac then
-		use {'nvim-telescope/telescope.nvim', requires = {'nvim-lua/plenary.nvim', 'kdheepak/lazygit.nvim'}} -- https://github.com/nvim-telescope/telescope.nvim#usage
-	end
+	use {'nvim-telescope/telescope.nvim', requires = {'nvim-lua/plenary.nvim', 'kdheepak/lazygit.nvim'}} -- https://github.com/nvim-telescope/telescope.nvim#usage
 end
 
 if util.isModuleAvailable 'packer' then
