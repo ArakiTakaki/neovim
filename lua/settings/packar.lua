@@ -1,5 +1,4 @@
 local util = require 'utils'
---
 -- git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 -- git clone https://github.com/wbthomason/packer.nvim '$env:LOCALAPPDATA\nvim-data\site\pack\packer\start\packer.nvim'
 -- packar https://qiita.com/delphinus/items/8160d884d415d7425fcc
@@ -22,7 +21,10 @@ local function startup(use)
 
 	-- =================================================================================
 	-- filler
-	use { 'Shougo/defx.nvim', requires = { 'roxma/nvim-yarp', 'roxma/vim-hug-neovim-rpc' } } -- https://github.com/Shougo/defx.nvim
+	use {
+		'Shougo/defx.nvim',
+		requires = { 'roxma/nvim-yarp', 'roxma/vim-hug-neovim-rpc' }
+	} -- https://github.com/Shougo/defx.nvim
 
 
 	use 'mileszs/ack.vim' -- https://github.com/mileszs/ack.vim
