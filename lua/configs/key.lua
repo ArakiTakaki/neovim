@@ -1,4 +1,6 @@
 -- Git Commands
+-- vim.api.nvim_set_keymap('n', '<Leader><Space>', ':set hlsearch!<CR>', { noremap = true, silent = true })
+-- :nnoremap <silent> <Leader><Space> :set hlsearch<CR>
 vim.cmd 'nnoremap [git]    <Nop>'
 vim.cmd 'nmap     <Space>g [git]'
 vim.cmd 'nnoremap <silent> [git]s :Git status -sb<CR>'
@@ -18,7 +20,3 @@ vim.cmd 'nnoremap [file]s :Ack '
 
 vim.cmd 'nnoremap <C-p> <cmd>Telescope find_files<cr>'
 vim.cmd 'nnoremap <C-f> :Ack '
-
--- local a = require "plenary.async"
--- local path = 'hoge'
--- local err, fd = a.uv.fs_open(path, "r", 438)
