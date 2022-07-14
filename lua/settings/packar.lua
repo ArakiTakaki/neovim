@@ -32,6 +32,7 @@ local function startup(use)
     -- =================================================================================
     -- utils
     use 'skanehira/translate.vim' -- :Translate で翻訳できる
+    use 'mattn/emmet-vim'
 
     -- =================================================================================
     -- syntax
@@ -43,6 +44,7 @@ local function startup(use)
         'nvim-telescope/telescope.nvim',
         requires = {'nvim-lua/plenary.nvim', 'kdheepak/lazygit.nvim'}
     } -- https://github.com/nvim-telescope/telescope.nvim#usage
+
 end
 
 if util.isModuleAvailable 'packer' then require'packer'.startup(startup) end
