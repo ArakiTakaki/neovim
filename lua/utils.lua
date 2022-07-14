@@ -29,17 +29,22 @@ end
 ---@param isEt     boolean  tabをスペースに変換するかどうか
 util.setIndent = function(filetype, indent, isEt)
     local result = {
-      'autocmd',
-      'FileType',
-      filetype,
-      'setlocal',
-      'sw=' .. indent,    -- softtabstop
-      'sts=' .. indent,   -- shiftwidth
-      'ts=' .. indent,    -- tabstop
-      isEt and 'et' or '' -- indent to space
+        'autocmd', 'FileType', filetype, 'setlocal', 'sw=' .. indent, -- softtabstop
+        'sts=' .. indent, -- shiftwidth
+        'ts=' .. indent, -- tabstop
+        isEt and 'et' or '' -- indent to space
     }
     local result = table.concat(result, ' ')
     vim.cmd(result)
 end
+
+---@ArakiTakaki
+---@meta 三項演算子
+---@param bool boolean filetypeの識別子の指定
+---@param a    any     値A
+---@param b    any     値B
+---@return     any 
+util.ternary =
+    function(bool, a, b) return ((not bool or (bool and a)) and b) end
 
 return util

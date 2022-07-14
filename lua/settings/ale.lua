@@ -1,7 +1,7 @@
 local isFix = false
 -- packer config が動作し次第移植
 if isFix then
-    vim.cmd[[
+    vim.cmd [[
     let g:ale_fixers = {
     \   'typescript': ['prettier'],
     \   'typescriptreact': ['prettier'],
@@ -13,7 +13,7 @@ if isFix then
     ]]
 end
 
-vim.cmd[[
+vim.cmd [[
 
 let g:ale_sign_error = 'P>'
 let g:ale_sign_warning = 'P-'

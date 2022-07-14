@@ -1,2 +1,2 @@
-vim.cmd[[
+vim.cmd [[
 ]]

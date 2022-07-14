@@ -1,4 +1,4 @@
-vim.cmd[[packadd packer.nvim]]
+vim.cmd [[packadd packer.nvim]]
 require('settings.defx-config')
 
 require('configs.env')

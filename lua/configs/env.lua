@@ -8,6 +8,4 @@ autocmd BufNewFile,BufRead *.tsx set filetype=javascript.tsx
 autocmd BufWritePre * :%s/\s\+$//ge  " 末尾スペースを削除
 ]]
 
-if is.windows then
-    vim.g.python3_host_prog = 'C:\\develop\\python'
-end
+if is.windows then vim.g.python3_host_prog = 'C:\\develop\\python' end
