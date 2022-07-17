@@ -1,3 +1,4 @@
+local is = require 'is'
 local util = require 'utils'
 -- git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 -- git clone https://github.com/wbthomason/packer.nvim '$env:LOCALAPPDATA\nvim-data\site\pack\packer\start\packer.nvim'
@@ -36,14 +37,34 @@ local function startup(use)
 
     -- =================================================================================
     -- syntax
-    use 'christianchiarulli/nvcode-color-schemes.vim'
-    use 'nvim-treesitter/nvim-treesitter'
-    use {'tikhomirov/vim-glsl', ft = {'glsl'}}
-
+    -- dir searcher 
     use {
         'nvim-telescope/telescope.nvim',
         requires = {'nvim-lua/plenary.nvim', 'kdheepak/lazygit.nvim'}
     } -- https://github.com/nvim-telescope/telescope.nvim#usage
+
+    if is.mac then
+        use 'nvim-treesitter/nvim-treesitter'
+        use 'christianchiarulli/nvcode-color-schemes.vim'
+        -- =================================================================================
+    end
+
+    if is.windows then
+        use {'tikhomirov/vim-glsl',         ft = {'glsl'}}
+        use { 'elzr/vim-json',              ft = { 'json' }}
+        use { 'groenewege/vim-less',        ft = { 'less' } }
+        use { 'stephpy/vim-yaml',           ft = {'swift'} }
+        use { 'keith/swift.vim',            ft = {'yaml'} }
+        use { 'digitaltoad/vim-jade',       ft = {'jade'} }
+        use { 'wavded/vim-stylus',          ft = {'stylus'} }
+        use { 'StanAngeloff/php.vim',       ft = {'php'} }
+        use { 'kchmck/vim-coffee-script',   ft = {'coffee'} }
+        use { 'dag/vim-fish',               ft = {'fish'} }
+        use { 'cespare/vim-toml',           ft = {'toml'} }
+        use { 'yuezk/vim-js',               ft = {'javascript', 'javascript.jsx'} }
+        use { 'maxmellon/vim-jsx-pretty',   ft = {'javascript', 'javascript.jsx'} }
+        use {'peitalin/vim-jsx-typescript', ft = {'typescript, typescript.tsx'}, requires = { 'leafgarland/typescript-vim' }}
+    end
 
 end
 
