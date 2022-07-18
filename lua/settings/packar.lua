@@ -12,7 +12,6 @@ local function startup(use)
 	-- =================================================================================
 	-- dcc
 	use { 'Shougo/ddc.vim',          requires = {'vim-denops/denops.vim'} }
-	use { 'vim-denops/denops.vim',   requires = {'Shougo/ddc.vim'} }
 	use { 'Shougo/ddc-around',       requires = {'Shougo/ddc.vim'} }
 	use { 'Shougo/ddc-matcher_head', requires = {'Shougo/ddc.vim'} }
 	use { 'Shougo/ddc-sorter_rank',  requires = {'Shougo/ddc.vim'} }
@@ -27,7 +26,7 @@ local function startup(use)
 	-- =================================================================================
 	-- lsp
 	use 'neovim/nvim-lspconfig'
-	use 'dense-analysis/ale'
+	-- use 'dense-analysis/ale'
 
 	-- =================================================================================
 	-- filler

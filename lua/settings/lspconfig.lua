@@ -35,7 +35,6 @@ if util.isModuleAvailable 'lspconfig' then
             filetypes = {
 		'none',
             },
-            root_dir = nvim_lsp.util.root_pattern('deno.json')
         }
     }
 
