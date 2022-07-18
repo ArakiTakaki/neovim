@@ -41,6 +41,7 @@ noremap <C-h> <C-w>h
 noremap <C-j> <C-w>j
 noremap <C-k> <C-w>k
 noremap <C-l> <C-w>l
+noremap <Space>i :lua vim.lsp.buf.code_action()<cr>
 " 平行分割ウィンド
 noremap ss :split<Return><C-w>w
 " 水平分割ウィンド
@@ -65,6 +66,7 @@ vnoremap <silent> <C-p> "0p
 " command
 command! Memo edit ~/memo.markdown
 command! Read edit ~/.config/nvim/README.md
+command! Import :lua vim.lsp.buf.code_action()<cr>
 
 "=====================================================================
 " あとで変更する

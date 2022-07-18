@@ -11,6 +11,7 @@ if util.isModuleAvailable 'lspconfig' then
             vim.api.nvim_buf_set_option(bufnr, ...)
         end
         local opts = {noremap = true, silent = true}
+	-- lua vim.lsp.buf.code_action()<cr>
 
         buf_set_keymap('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
         buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
