@@ -26,15 +26,25 @@ if util.isModuleAvailable 'lspconfig' then
         vuels = {},
         gopls = {},
         tsserver = {
-        filetypes = {
-            'javascript', 'typescript', 'typescriptreact', 'typescript.tsx'
+            filetypes = {
+                'javascript', 'typescript', 'typescriptreact', 'typescript.tsx'
+            },
+            root_dir = nvim_lsp.util.root_pattern('package.json')
+        },
+        denols = {
+            filetypes = {
+		'none',
+            },
+            root_dir = nvim_lsp.util.root_pattern('deno.json')
         }
-    }}
+    }
 
     for k, v in pairs(lsps) do
         nvim_lsp[k].setup {
             on_attach = on_attach,
-            filetypes = v.filetypes
+            filetypes = v.filetypes,
+            root_dir = v.root_dir
         }
     end
 end
+

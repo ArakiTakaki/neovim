@@ -6,48 +6,57 @@ local util = require 'utils'
 --
 
 local function startup(use)
-    use 'wbthomason/packer.nvim' -- https://github.com/wbthomason/packer.nvim
-    use 'nvim-lua/popup.nvim'
+	use 'wbthomason/packer.nvim' -- https://github.com/wbthomason/packer.nvim
+	use 'nvim-lua/popup.nvim'
 
-    -- =================================================================================
-    -- git
-    use 'tpope/vim-fugitive' -- https://github.com/tpope/vim-fugitive
-    -- git browse
-    use 'tpope/vim-rhubarb' -- https://qiita.com/takayama/items/de4341fb8f015ffe4750#tpopevim-rhubarb
+	-- =================================================================================
+	-- dcc
+	use { 'Shougo/ddc.vim',          requires = {'vim-denops/denops.vim'} }
+	use { 'vim-denops/denops.vim',   requires = {'Shougo/ddc.vim'} }
+	use { 'Shougo/ddc-around',       requires = {'Shougo/ddc.vim'} }
+	use { 'Shougo/ddc-matcher_head', requires = {'Shougo/ddc.vim'} }
+	use { 'Shougo/ddc-sorter_rank',  requires = {'Shougo/ddc.vim'} }
+	use { 'Shougo/ddc-nvim-lsp',     requires = {'Shougo/ddc.vim'} }
 
-    -- =================================================================================
-    -- lsp
-    use 'neovim/nvim-lspconfig'
-    use 'dense-analysis/ale'
+	-- =================================================================================
+	-- git
+	use 'tpope/vim-fugitive' -- https://github.com/tpope/vim-fugitive
+	-- git browse
+	use 'tpope/vim-rhubarb' -- https://qiita.com/takayama/items/de4341fb8f015ffe4750#tpopevim-rhubarb
 
-    -- =================================================================================
-    -- filler
-    use {
-        'Shougo/defx.nvim',
-        requires = {'roxma/nvim-yarp', 'roxma/vim-hug-neovim-rpc'}
-    } -- https://github.com/Shougo/defx.nvim
+	-- =================================================================================
+	-- lsp
+	use 'neovim/nvim-lspconfig'
+	use 'dense-analysis/ale'
 
-    use 'mileszs/ack.vim' -- https://github.com/mileszs/ack.vim
-    -- https://qiita.com/Biacco/items/b750c073a92a8e9fea7d
+	-- =================================================================================
+	-- filler
+	use {
+		'Shougo/defx.nvim',
+		requires = {'roxma/nvim-yarp', 'roxma/vim-hug-neovim-rpc'}
+	} -- https://github.com/Shougo/defx.nvim
 
-    -- =================================================================================
-    -- utils
-    use 'skanehira/translate.vim' -- :Translate で翻訳できる
-    use 'mattn/emmet-vim'
+	use 'mileszs/ack.vim' -- https://github.com/mileszs/ack.vim
+	-- https://qiita.com/Biacco/items/b750c073a92a8e9fea7d
 
-    -- =================================================================================
-    -- syntax
-    -- dir searcher 
-    use {
-        'nvim-telescope/telescope.nvim',
-        requires = {'nvim-lua/plenary.nvim', 'kdheepak/lazygit.nvim'}
-    } -- https://github.com/nvim-telescope/telescope.nvim#usage
+	-- =================================================================================
+	-- utils
+	use 'skanehira/translate.vim' -- :Translate で翻訳できる
+	use 'mattn/emmet-vim'
 
-    if is.mac then
-        use 'nvim-treesitter/nvim-treesitter'
-        use 'christianchiarulli/nvcode-color-schemes.vim'
-        -- =================================================================================
-    end
+	-- =================================================================================
+	-- syntax
+	-- dir searcher
+	use {
+		'nvim-telescope/telescope.nvim',
+		requires = {'nvim-lua/plenary.nvim', 'kdheepak/lazygit.nvim'}
+	} -- https://github.com/nvim-telescope/telescope.nvim#usage
+
+	if is.mac then
+		use 'nvim-treesitter/nvim-treesitter'
+		use 'christianchiarulli/nvcode-color-schemes.vim'
+		-- =================================================================================
+	end
 
     if is.windows then
         use {'tikhomirov/vim-glsl',         ft = {'glsl'}}
@@ -65,7 +74,6 @@ local function startup(use)
         use { 'maxmellon/vim-jsx-pretty',   ft = {'javascript', 'javascript.jsx'} }
         use {'peitalin/vim-jsx-typescript', ft = {'typescript, typescript.tsx'}, requires = { 'leafgarland/typescript-vim' }}
     end
-
 end
 
 if util.isModuleAvailable 'packer' then require'packer'.startup(startup) end
