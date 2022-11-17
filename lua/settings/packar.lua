@@ -35,7 +35,7 @@ local function startup(use)
 	-- filler
 	use {
 		'Shougo/defx.nvim',
-		requires = {'roxma/nvim-yarp', 'roxma/vim-hug-neovim-rpc'}
+		requires = { 'roxma/nvim-yarp', 'roxma/vim-hug-neovim-rpc' }
 	} -- https://github.com/Shougo/defx.nvim
 
 	use 'mileszs/ack.vim' -- https://github.com/mileszs/ack.vim
@@ -51,31 +51,30 @@ local function startup(use)
 	-- dir searcher
 	use {
 		'nvim-telescope/telescope.nvim',
-		requires = {'nvim-lua/plenary.nvim', 'kdheepak/lazygit.nvim'}
+		requires = { 'nvim-lua/plenary.nvim', 'kdheepak/lazygit.nvim' }
 	} -- https://github.com/nvim-telescope/telescope.nvim#usage
 
-	if is.mac or  is.linux then
+	if is.mac or is.linux then
 		use 'nvim-treesitter/nvim-treesitter'
 		use 'christianchiarulli/nvcode-color-schemes.vim'
 	end
 
-    if is.windows then
-        use {'tikhomirov/vim-glsl',         ft = {'glsl'}}
-        use { 'elzr/vim-json',              ft = {'json'}}
-        use { 'groenewege/vim-less',        ft = {'less'} }
-        use { 'stephpy/vim-yaml',           ft = {'swift'} }
-        use { 'keith/swift.vim',            ft = {'yaml'} }
-        use { 'digitaltoad/vim-jade',       ft = {'jade'} }
-        use { 'wavded/vim-stylus',          ft = {'stylus'} }
-        use { 'StanAngeloff/php.vim',       ft = {'php'} }
-        use { 'kchmck/vim-coffee-script',   ft = {'coffee'} }
-        use { 'dag/vim-fish',               ft = {'fish'} }
-        use { 'cespare/vim-toml',           ft = {'toml'} }
-        use { 'yuezk/vim-js',               ft = {'javascript', 'javascript.jsx'} }
-        use { 'maxmellon/vim-jsx-pretty',   ft = {'javascript', 'javascript.jsx'} }
-        use {'peitalin/vim-jsx-typescript', ft = {'typescript, typescript.tsx'}, requires = { 'leafgarland/typescript-vim' }}
-    end
+	if is.windows then
+		use { 'tikhomirov/vim-glsl', ft = { 'glsl' } }
+		use { 'elzr/vim-json', ft = { 'json' } }
+		use { 'groenewege/vim-less', ft = { 'less' } }
+		use { 'stephpy/vim-yaml', ft = { 'swift' } }
+		use { 'keith/swift.vim', ft = { 'yaml' } }
+		use { 'digitaltoad/vim-jade', ft = { 'jade' } }
+		use { 'wavded/vim-stylus', ft = { 'stylus' } }
+		use { 'StanAngeloff/php.vim', ft = { 'php' } }
+		use { 'kchmck/vim-coffee-script', ft = { 'coffee' } }
+		use { 'dag/vim-fish', ft = { 'fish' } }
+		use { 'cespare/vim-toml', ft = { 'toml' } }
+		use { 'yuezk/vim-js', ft = { 'javascript', 'javascript.jsx' } }
+		use { 'maxmellon/vim-jsx-pretty', ft = { 'javascript', 'javascript.jsx' } }
+		use { 'peitalin/vim-jsx-typescript', ft = { 'typescript, typescript.tsx' }, requires = { 'leafgarland/typescript-vim' } }
+	end
 end
 
-if util.isModuleAvailable 'packer' then require'packer'.startup(startup) end
-
+if util.isModuleAvailable 'packer' then require 'packer'.startup(startup) end
