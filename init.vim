@@ -11,7 +11,7 @@ if is_nvim
 endif
 "=====================================================================
 set encoding=utf-8
-set number
+" set number
 " set ruler                " ルーラーの表示
 set cursorline             " 行を強調表示
 " set cursorcolumn           " 列を強調表示

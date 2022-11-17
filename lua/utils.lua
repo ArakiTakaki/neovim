@@ -12,8 +12,8 @@ util.isModuleAvailable = function(strModuleName)
                 return true
             end
         end
-        return false
     end
+    return false
 end
 
 util.map = function(func, seq)
@@ -43,7 +43,7 @@ end
 ---@param bool boolean filetypeの識別子の指定
 ---@param a    any     値A
 ---@param b    any     値B
----@return     any 
+---@return     any
 util.ternary =
     function(bool, a, b) return ((not bool or (bool and a)) and b) end
 

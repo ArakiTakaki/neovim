@@ -10,14 +10,6 @@ local function startup(use)
 	use 'nvim-lua/popup.nvim'
 
 	-- =================================================================================
-	-- dcc
-	use { 'Shougo/ddc.vim',          requires = {'vim-denops/denops.vim'} }
-	use { 'Shougo/ddc-around',       requires = {'Shougo/ddc.vim'} }
-	use { 'Shougo/ddc-matcher_head', requires = {'Shougo/ddc.vim'} }
-	use { 'Shougo/ddc-sorter_rank',  requires = {'Shougo/ddc.vim'} }
-	use { 'Shougo/ddc-nvim-lsp',     requires = {'Shougo/ddc.vim'} }
-
-	-- =================================================================================
 	-- git
 	use 'tpope/vim-fugitive' -- https://github.com/tpope/vim-fugitive
 	-- git browse
@@ -26,7 +18,18 @@ local function startup(use)
 	-- =================================================================================
 	-- lsp
 	use 'neovim/nvim-lspconfig'
-	-- use 'dense-analysis/ale'
+	use 'williamboman/mason.nvim'
+	use 'williamboman/mason-lspconfig.nvim'
+
+	-- =================================================================================
+	-- cmp plugins
+	use({ "hrsh7th/nvim-cmp" }) -- The completion plugin
+	use({ "hrsh7th/cmp-buffer" }) -- buffer completions
+	use({ "hrsh7th/cmp-path" }) -- path completions
+	use({ "hrsh7th/cmp-cmdline" }) -- cmdline completions
+	use({ "saadparwaiz1/cmp_luasnip" }) -- snippet completions
+	use({ "hrsh7th/cmp-nvim-lsp" })
+	use({ "hrsh7th/cmp-nvim-lua" })
 
 	-- =================================================================================
 	-- filler
@@ -51,16 +54,15 @@ local function startup(use)
 		requires = {'nvim-lua/plenary.nvim', 'kdheepak/lazygit.nvim'}
 	} -- https://github.com/nvim-telescope/telescope.nvim#usage
 
-	if is.mac then
+	if is.mac or  is.linux then
 		use 'nvim-treesitter/nvim-treesitter'
 		use 'christianchiarulli/nvcode-color-schemes.vim'
-		-- =================================================================================
 	end
 
     if is.windows then
         use {'tikhomirov/vim-glsl',         ft = {'glsl'}}
-        use { 'elzr/vim-json',              ft = { 'json' }}
-        use { 'groenewege/vim-less',        ft = { 'less' } }
+        use { 'elzr/vim-json',              ft = {'json'}}
+        use { 'groenewege/vim-less',        ft = {'less'} }
         use { 'stephpy/vim-yaml',           ft = {'swift'} }
         use { 'keith/swift.vim',            ft = {'yaml'} }
         use { 'digitaltoad/vim-jade',       ft = {'jade'} }
@@ -76,3 +78,4 @@ local function startup(use)
 end
 
 if util.isModuleAvailable 'packer' then require'packer'.startup(startup) end
+

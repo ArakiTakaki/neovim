@@ -40,3 +40,4 @@ indent('javascriptreact', 2, true)
 indent('typescript',      2, true)
 indent('typescript.tsx',  2, true)
 indent('typescriptreact', 2, true)
+
