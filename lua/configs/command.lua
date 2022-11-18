@@ -1,5 +1,28 @@
-vim.cmd 'command! Format lua vim.lsp.buf.format { async = true }'
 
-vim.cmd 'command! Rename lua vim.lsp.buf.rename()'
-vim.cmd 'command! CodeAction lua vim.lsp.buf.code_action()'
-vim.cmd 'command! CodeDefinition lua vim.lsp.buf.hover()'
+vim.api.nvim_create_user_command(
+    'Format',
+    function()
+        vim.lsp.buf.format { async = true }
+    end, {}
+)
+
+vim.api.nvim_create_user_command(
+    'Rename',
+    function()
+        vim.lsp.buf.rename()
+    end, {}
+)
+
+vim.api.nvim_create_user_command(
+    'CodeAction',
+    function()
+        vim.lsp.buf.code_action()
+    end, {}
+)
+
+vim.api.nvim_create_user_command(
+    'CodeDefinition',
+    function()
+        vim.lsp.buf.hover()
+    end, {}
+)

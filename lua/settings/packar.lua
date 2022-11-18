@@ -12,7 +12,6 @@ local function startup(use)
 	-- =================================================================================
 	-- git
 	use 'tpope/vim-fugitive' -- https://github.com/tpope/vim-fugitive
-	-- git browse
 	use 'tpope/vim-rhubarb' -- https://qiita.com/takayama/items/de4341fb8f015ffe4750#tpopevim-rhubarb
 
 	-- =================================================================================
@@ -23,39 +22,35 @@ local function startup(use)
 
 	-- =================================================================================
 	-- cmp plugins
-	use({ "hrsh7th/nvim-cmp" }) -- The completion plugin
-	use({ "hrsh7th/cmp-buffer" }) -- buffer completions
-	use({ "hrsh7th/cmp-path" }) -- path completions
-	use({ "hrsh7th/cmp-cmdline" }) -- cmdline completions
-	use({ "saadparwaiz1/cmp_luasnip" }) -- snippet completions
-	use({ "hrsh7th/cmp-nvim-lsp" })
-	use({ "hrsh7th/cmp-nvim-lua" })
+	use "hrsh7th/nvim-cmp" -- The completion plugin
+	use "hrsh7th/cmp-buffer" -- buffer completions
+	use "hrsh7th/cmp-path" -- path completions
+	use "hrsh7th/cmp-cmdline" -- cmdline completions
+	use "saadparwaiz1/cmp_luasnip" -- snippet completions
+	use "hrsh7th/cmp-nvim-lsp"
+	use "hrsh7th/cmp-nvim-lua"
 
-	-- =================================================================================
-	-- filler
-	use {
-		'Shougo/defx.nvim',
-		requires = { 'roxma/nvim-yarp', 'roxma/vim-hug-neovim-rpc' }
-	} -- https://github.com/Shougo/defx.nvim
-
-	use 'mileszs/ack.vim' -- https://github.com/mileszs/ack.vim
-	-- https://qiita.com/Biacco/items/b750c073a92a8e9fea7d
 
 	-- =================================================================================
 	-- utils
 	use 'skanehira/translate.vim' -- :Translate で翻訳できる
 	use 'mattn/emmet-vim'
+	use 'kyazdani42/nvim-web-devicons'
 
 	-- =================================================================================
 	-- syntax
 	-- dir searcher
+	use 'mileszs/ack.vim' -- https://github.com/mileszs/ack.vim
+	-- https://qiita.com/Biacco/items/b750c073a92a8e9fea7d
 	use {
 		'nvim-telescope/telescope.nvim',
 		requires = { 'nvim-lua/plenary.nvim', 'kdheepak/lazygit.nvim' }
 	} -- https://github.com/nvim-telescope/telescope.nvim#usage
+	use({ "nvim-telescope/telescope-file-browser.nvim", requires = { { "nvim-telescope/telescope.nvim" } } })
+
 
 	if is.mac or is.linux then
-		use 'nvim-treesitter/nvim-treesitter'
+		use { 'nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' } }
 		use 'christianchiarulli/nvcode-color-schemes.vim'
 	end
 
