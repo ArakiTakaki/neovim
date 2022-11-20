@@ -12,7 +12,6 @@ vim.cmd 'nnoremap <silent> [git]g :LazyGit<CR>'
 -- File Commands
 vim.cmd 'nnoremap [file]    <Nop>'
 vim.cmd 'nmap     f [file]'
-
 vim.api.nvim_set_keymap(
     "n",
     "[file]f",

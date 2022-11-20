@@ -11,7 +11,8 @@ if util.isModuleAvailable 'telescope' and not (is.windows) then
 		pickers = { find_files = { theme = 'dropdown' } },
 		extensions = {
 			file_browser = {
-				theme = "dropdown",
+				-- theme = "dropdown",
+				theme = "ivy",
 				hijack_netrw = true,
 				mappings = {
 					["i"] = {

@@ -23,6 +23,14 @@ util.map = function(func, seq)
 	return result
 end
 
+util.entriesMap = function (func, seq)
+	local result = {}
+	for k, v in ipairs(seq) do
+		table.insert(result, func(k, v))
+	end
+	return result
+end
+
 ---@ArakiTakaki
 ---@param filetype string   filetypeの識別子の指定
 ---@param indent   number   indentのサイズの指定
