@@ -52,7 +52,6 @@ end
 ---@param a    any     値A
 ---@param b    any     値B
 ---@return     any
-util.ternary =
-function(bool, a, b) return ((not bool or (bool and a)) and b) end
+util.ternary = function(bool, a, b) return ((not bool or (bool and a)) and b) end
 
 return util

@@ -1,6 +1,6 @@
 local util = require 'utils'
-
 local indent = util.setIndent;
+
 indent('markdown', 4, true)
 indent('apache', 4, true)
 indent('aspvbs', 4, true)
