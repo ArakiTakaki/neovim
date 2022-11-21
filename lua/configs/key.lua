@@ -1,8 +1,6 @@
 local vim = vim
 
 -- Git Commands
--- vim.api.nvim_set_keymap('n', '<Leader><Space>', ':set hlsearch!<CR>', { noremap = true, silent = true })
--- :nnoremap <silent> <Leader><Space> :set hlsearch<CR>
 vim.cmd [[
 nnoremap [git]    <Nop>
 nmap     <Space>g [git]
