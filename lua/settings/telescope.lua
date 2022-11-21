@@ -4,35 +4,41 @@ local is = require 'is'
 
 if util.isModuleAvailable 'telescope' and not (is.windows) then
 	local telescope = require 'telescope'
+	local fb_actions = require 'telescope'.extensions.file_browser.actions
+
 	telescope.setup {
 		defaults = {
 			file_ignore_patterns = { "node%_modules/.*" }
 		},
-
 		pickers = { find_files = { theme = 'dropdown' } },
 		extensions = {
 			file_browser = {
-				-- theme = "dropdown",
-				theme = "ivy",
+				-- theme = "ivy",
+				theme = "dropdown",
+				path = '%:p:h',
+				cwd = 'telescope_buffer_dir()',
+				respect_gitignore = false,
+				hidden = true,
+				grouped = false,
+				previewr = false,
+				initial_mode = 'normal',
+				layout_config = { height = 40 },
 				hijack_netrw = true,
+
 				mappings = {
 					["i"] = {
-						-- your custom insert mode mappings
 					},
 					["n"] = {
-						-- your custom normal mode mappings
+						["N"] = fb_actions.create,
+						["h"] = fb_actions.goto_parent_dir,
+						["/"] = function()
+							vim.cmd 'startinsert'
+						end,
 					},
 				},
 			},
 		},
 	}
-
-	vim.api.nvim_set_keymap(
-		"n",
-		"fgrep",
-		":lua require('telescope.builtin').live_grep()<cr>",
-		{ noremap = true }
-	)
 
 	telescope.load_extension 'file_browser'
 	telescope.load_extension 'lazygit'
