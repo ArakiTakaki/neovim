@@ -1,4 +1,6 @@
+local vim = vim
 local util = require 'utils'
+
 -- ref https://github.com/williamboman/mason.nvim
 if util.isModuleAvailable 'mason' then
 	require('mason').setup({

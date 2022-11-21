@@ -1,3 +1,4 @@
+local vim = vim
 local is = require 'is'
 
 vim.cmd [[

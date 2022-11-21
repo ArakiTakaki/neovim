@@ -1,3 +1,4 @@
+local vim = vim
 -- local Commands = {
 --     Format = function() vim.lsp.buf.format { async = true } end,
 --     Rename = function() vim.lsp.buf.rename() end,
@@ -5,45 +6,34 @@
 --     CodeDefinition = function() vim.lsp.buf.hover() end,
 -- }
 
-vim.api.nvim_create_user_command(
-	'Format',
-	function()
-		vim.lsp.buf.format { async = true }
-	end, {}
-)
+local codeFormat = function()
+	vim.lsp.buf.format { async = true }
+end
+vim.api.nvim_create_user_command('CodeFormat', codeFormat, {})
 
-vim.api.nvim_create_user_command(
-	'Rename',
-	function()
-		vim.lsp.buf.rename()
-	end, {}
-)
+local codeRename = function()
+	vim.lsp.buf.rename()
+end
+vim.api.nvim_create_user_command('CodeRename', codeRename, {})
 
-vim.api.nvim_create_user_command(
-	'CodeAction',
-	function()
-		vim.lsp.buf.code_action()
-	end, {}
-)
+local codeActionEvent = function()
+	vim.lsp.buf.code_action()
+end
+vim.api.nvim_create_user_command('CodeAction', codeActionEvent, {})
+vim.keymap.set("n", "<Space>i", codeActionEvent, {})
 
-vim.api.nvim_create_user_command(
-	'CodeDefinition',
-	function()
-		vim.lsp.buf.definition()
-	end, {}
-)
+local codeDefinition = function()
+	vim.lsp.buf.definition()
+end
+vim.api.nvim_create_user_command('CodeDefinition', codeDefinition, {})
 
-vim.api.nvim_create_user_command(
-	'CodeDeclaration',
-	function()
-		vim.lsp.buf.declaration()
-	end, {}
-)
+local codeDeclaration = function()
+	vim.lsp.buf.declaration()
+end
+vim.api.nvim_create_user_command('CodeDeclaration', codeDeclaration, {})
 
-vim.api.nvim_create_user_command(
-	'CodeHover',
-	function()
-		vim.lsp.buf.hover()
-	end, {}
-)
+local codeHover = function()
+	vim.lsp.buf.hover()
+end
+vim.api.nvim_create_user_command('CodeHover', codeHover, {})
 

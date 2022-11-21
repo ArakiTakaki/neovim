@@ -1,3 +1,4 @@
+local vim = vim
 local util = {}
 
 -- モジュールが存在しているかどうかの判定

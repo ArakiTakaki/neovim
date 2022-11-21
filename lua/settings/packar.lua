@@ -1,5 +1,7 @@
+local vim = vim
 local is = require 'is'
 local util = require 'utils'
+
 -- git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 -- git clone https://github.com/wbthomason/packer.nvim '$env:LOCALAPPDATA\nvim-data\site\pack\packer\start\packer.nvim'
 -- packar https://qiita.com/delphinus/items/8160d884d415d7425fcc
@@ -24,6 +26,7 @@ local function startup(use)
 	-- =================================================================================
 	use 'tpope/vim-fugitive' -- https://github.com/tpope/vim-fugitive
 	use 'tpope/vim-rhubarb' -- https://qiita.com/takayama/items/de4341fb8f015ffe4750#tpopevim-rhubarb
+	use 'kdheepak/lazygit.nvim'
 
 	-- =================================================================================
 	-- lsp
@@ -47,7 +50,7 @@ local function startup(use)
 	-- dir searcher
 	-- =================================================================================
 	use 'mileszs/ack.vim' -- https://github.com/mileszs/ack.vim https://qiita.com/Biacco/items/b750c073a92a8e9fea7d
-	use { 'nvim-telescope/telescope.nvim', requires = { 'nvim-lua/plenary.nvim', 'kdheepak/lazygit.nvim' }} -- https://github.com/nvim-telescope/telescope.nvim#usage
+	use { 'nvim-telescope/telescope.nvim', requires = { 'nvim-lua/plenary.nvim' }} -- https://github.com/nvim-telescope/telescope.nvim#usage
 	use { 'nvim-telescope/telescope-file-browser.nvim', requires = {{ 'nvim-telescope/telescope.nvim' }}}
 
 	-- =================================================================================

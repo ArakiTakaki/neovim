@@ -1,3 +1,4 @@
+local vim = vim
 local util = require 'utils'
 local indent = util.setIndent;
 

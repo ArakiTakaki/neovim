@@ -1,4 +1,5 @@
 local util = require 'utils'
+local vim = vim
 
 if util.isModuleAvailable 'cmp' then
 	local cmp = require 'cmp'
